@@ -162,7 +162,7 @@ stats = deviance(m1) - deviance(m2)
 p_value = 1 - pchisq(stats, 1)
 
 # (d)
-m3 <- lmer(frequency ~ gender + attitude + (1+attitude|subject), data = data)
+m3 = lmer(frequency ~ gender + attitude + (1 + attitude|subject), data = data)
 ```
 
     ## boundary (singular) fit: see help('isSingular')
@@ -217,7 +217,8 @@ ranef(m3)
     ## with conditional variances for "subject"
 
 ``` r
-m4 <- lmer(frequency ~ gender + attitude + (1|subject)+(1|scenario), data = data)
+m4 = lmer(frequency ~ gender + attitude + (1|subject) + (1|scenario), data = data)
+
 summary(m4)
 ```
 

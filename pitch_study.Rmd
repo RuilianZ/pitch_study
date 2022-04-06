@@ -37,11 +37,16 @@ stats = deviance(m1) - deviance(m2)
 p_value = 1 - pchisq(stats, 1)
 
 # (d)
-m3 <- lmer(frequency ~ gender + attitude + (1+attitude|subject), data = data)
+m3 = lmer(frequency ~ gender + attitude + (1 + attitude|subject), data = data)
+
 summary(m3)
+
 ranef(m3)
-m4 <- lmer(frequency ~ gender + attitude + (1|subject)+(1|scenario), data = data)
+
+m4 = lmer(frequency ~ gender + attitude + (1|subject) + (1|scenario), data = data)
+
 summary(m4)
+
 ranef(m4)
 ```
 
