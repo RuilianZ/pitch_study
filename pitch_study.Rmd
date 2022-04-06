@@ -5,3 +5,11 @@ date: "4/6/2022"
 output: github_document
 ---
 
+```{r}
+data = read.csv("data.csv")
+
+summary(data)
+
+boxplot(frequency ~ attitude*gender, data = data)
+```
+
